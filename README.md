@@ -9,11 +9,11 @@ A RESTful API built with **Node.js**, **Express**, and **MongoDB Atlas** that pr
 
 ## 🚀 Overview & Functionalities
 
-The Shipment Pricing API is designed to:
-- **Calculate Shipment Costs:** Compute shipping costs based on cargo type, weight, and distance.
-- **Manage Pricing Rules:** Allow administrators to create, update, and delete pricing rules.
+The Role-Based Access Control &amp; Shipment Pricing API is designed to:
 - **User Authentication:** Enable users to register and log in using JWT for secure access.
 - **Role-Based Authorization:** Restrict access to certain endpoints based on user roles (admin, shipper, and carrier).
+- **Calculate Shipment Costs:** Compute shipping costs based on cargo type, weight, and distance.
+- **Manage Pricing Rules:** Allow administrators to create, update, and delete pricing rules.
 - **Logging:** Log important events and admin actions using Winston.
 - **Validation:** Validate incoming request data with express-validator.
 
@@ -81,30 +81,30 @@ The API will run at http://localhost:5000
 ## 📚 Dependencies
 The project relies on the following main dependencies:
 
-- **express: Web framework for Node.js.
-- **mongoose: ODM library for MongoDB.
-- **dotenv: Loads environment variables from a .env file.
-- **jsonwebtoken: Implements JSON Web Tokens (JWT) for secure authentication.
-- **bcrypt: Library for hashing and comparing passwords.
-- **express-validator: Middleware for validating and sanitizing request data.
-- **winston: Logging library for tracking events.
-- **cors: Middleware for enabling Cross-Origin Resource Sharing.
-- **helmet: Security middleware to set various HTTP headers.
+- express: Web framework for Node.js.
+- mongoose: ODM library for MongoDB.
+- dotenv: Loads environment variables from a .env file.
+- jsonwebtoken: Implements JSON Web Tokens (JWT) for secure authentication.
+- bcrypt: Library for hashing and comparing passwords.
+- express-validator: Middleware for validating and sanitizing request data.
+- winston: Logging library for tracking events.
+- cors: Middleware for enabling Cross-Origin Resource Sharing.
+- helmet: Security middleware to set various HTTP headers.
 
 ## 🔍 Logging & Validation
 - Logging:
 The API uses Winston to log key events such as:
 
-Database connections and errors.
-Authentication events (login success and failures).
-Admin actions (creation, updates, deletion of pricing rules).
-Logs are stored in files (e.g., logs/app.log, logs/pricing.log, admin-actions.log).
+    Database connections and errors.
+    Authentication events (login success and failures).
+    Admin actions (creation, updates, deletion of pricing rules).
+    Logs are stored in files (e.g., logs/app.log, logs/pricing.log, admin-actions.log).
 - Validation:
-express-validator is used to validate incoming request data, ensuring that:
+    express-validator is used to validate incoming request data, ensuring that:
 
-Required fields are provided.
-Data types are correct (e.g., numeric values for pricing multipliers).
-User roles are within the allowed list.
+    Required fields are provided.
+    Data types are correct (e.g., numeric values for pricing multipliers).
+    User roles are within the allowed list.
 
 ## 🗄 Database
 This API uses MongoDB Atlas as its database service:
