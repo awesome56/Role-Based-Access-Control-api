@@ -1,9 +1,9 @@
-# shipment-pricing-api
+# Role-Based Access Control
 Authentication &amp; Role-Based Access Control (RBAC)
 
-# 📦 Shipment Pricing API
+# Authentication &amp; Role-Based Access Control (RBAC)
 
-A RESTful API built with **Node.js**, **Express**, and **MongoDB Atlas** that calculates shipment costs, manages pricing rules, and provides secure user authentication and role-based authorization.
+A RESTful API built with **Node.js**, **Express**, and **MongoDB Atlas** that primarily provides secure user authentication and role-based access control (RBAC). It implements a shipment calculator that utilizes these roles to manage pricing rules and calculate shipment costs.
 
 ---
 
@@ -92,14 +92,14 @@ The project relies on the following main dependencies:
 - **helmet: Security middleware to set various HTTP headers.
 
 ## 🔍 Logging & Validation
-- **Logging:
+- Logging:
 The API uses Winston to log key events such as:
 
 Database connections and errors.
 Authentication events (login success and failures).
 Admin actions (creation, updates, deletion of pricing rules).
 Logs are stored in files (e.g., logs/app.log, logs/pricing.log, admin-actions.log).
-- **Validation:
+- Validation:
 express-validator is used to validate incoming request data, ensuring that:
 
 Required fields are provided.
@@ -108,5 +108,5 @@ User roles are within the allowed list.
 
 ## 🗄 Database
 This API uses MongoDB Atlas as its database service:
-- **Connection String: Provided via the MONGODB_URI in the .env file.
-- **ODM: Mongoose is used for schema definitions, validations, and interacting with MongoDB.
+- Connection String: Provided via the MONGODB_URI in the .env file.
+- ODM: Mongoose is used for schema definitions, validations, and interacting with MongoDB.
