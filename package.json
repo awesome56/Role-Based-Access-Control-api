@@ -2,8 +2,9 @@
   "name": "shipment-pricing-api",
   "version": "1.0.0",
   "description": "API for calculating shipment pricing",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
   "type": "module",
