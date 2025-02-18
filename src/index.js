@@ -33,7 +33,7 @@ const logger = winston.createLogger({
   ]
 });
 
-export default app;
+module.export = app;
 
 // Database connection and server start (only for local development)
 if (process.env.NODE_ENV !== 'production') { // Check if not in production
