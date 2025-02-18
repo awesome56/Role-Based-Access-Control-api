@@ -33,15 +33,6 @@ const logger = winston.createLogger({
   ]
 });
 
-// Start the server after database connection
-// const startServer = () => {
-//   const PORT = process.env.SERVER_PORT || 3000;
-//   app.listen(PORT, () => {
-//     logger.info(`Server running on port ${PORT}`);
-//   });
-// };
-
-//startServer();
 export default app;
 
 // Database connection and server start (only for local development)
