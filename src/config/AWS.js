@@ -17,16 +17,16 @@ const logger = winston.createLogger({
 class AWSConfig {
   constructor() {
     // Validate required environment variables
-    if (!process.env.AWS_REGION || !process.env.AWS_ACCESS_KEY || !process.env.AWS_SECRET_KEY) {
+    if (!process.env.AWS_DEFAULT_REGION || !process.env.AWS_ACCESS || !process.env.AWS_SECRET) {
       logger.error('❌ Missing AWS configuration variables. Please check your .env file.');
       throw new Error('AWS configuration variables are missing.');
     }
 
     // Update AWS configuration
     AWS.config.update({
-      region: process.env.AWS_REGION,
-      accessKeyId: process.env.AWS_ACCESS_KEY,
-      secretAccessKey: process.env.AWS_SECRET_KEY,
+      region: process.env.AWS_DEFAULT_REGION,
+      accessKeyId: process.env.AWS_ACCESS,
+      secretAccessKey: process.env.AWS_SECRET,
     });
 
     // Initialize AWS services (e.g., S3)

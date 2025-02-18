@@ -26,7 +26,7 @@ class AuthMiddleware {
       }
 
       // Verify the token
-      req.user = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = jwt.verify(token, process.env.JWT_SECRET_KEY);
       next();
     } catch (error) {
       logger.error(`Invalid token from IP: ${req.ip} - ${error.message}`);
