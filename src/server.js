@@ -35,7 +35,7 @@ const logger = winston.createLogger({
 
 // Start the server after database connection
 const startServer = () => {
-  const PORT = process.env.PORT || 3000;
+  const PORT = process.env.SERVER_PORT || 3000;
   app.listen(PORT, () => {
     logger.info(`Server running on port ${PORT}`);
   });
