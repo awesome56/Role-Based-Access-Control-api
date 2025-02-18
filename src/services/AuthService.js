@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import winston from 'winston';
-import User from './models/User.js';
+import User from '../models/User.js';
 
 // Logger setup for tracking authentication events
 const logger = winston.createLogger({
