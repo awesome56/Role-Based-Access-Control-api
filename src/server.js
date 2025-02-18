@@ -41,4 +41,5 @@ const startServer = () => {
   });
 };
 
-startServer();
+// startServer();
+export default app;
