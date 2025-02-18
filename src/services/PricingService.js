@@ -1,4 +1,4 @@
-import Pricing from '../models/Pricing.js';
+import Pricing from './models/Pricing.js';
 import winston from 'winston';
 
 // Logger setup for tracking pricing changes

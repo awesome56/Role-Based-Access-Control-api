@@ -1,6 +1,6 @@
 import express from 'express';
-import PricingController from '../controllers/PricingController.js';
-import AuthMiddleware from '../middleware/AuthMiddleware.js';
+import PricingController from './controllers/PricingController.js';
+import AuthMiddleware from './middleware/AuthMiddleware.js';
 
 const router = express.Router();
 
