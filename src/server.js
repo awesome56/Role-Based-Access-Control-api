@@ -34,12 +34,37 @@ const logger = winston.createLogger({
 });
 
 // Start the server after database connection
-const startServer = () => {
-  const PORT = process.env.SERVER_PORT || 3000;
-  app.listen(PORT, () => {
-    logger.info(`Server running on port ${PORT}`);
-  });
-};
+// const startServer = () => {
+//   const PORT = process.env.SERVER_PORT || 3000;
+//   app.listen(PORT, () => {
+//     logger.info(`Server running on port ${PORT}`);
+//   });
+// };
 
-startServer();
-//export default app;
+//startServer();
+export default app;
+
+// Database connection and server start (only for local development)
+if (process.env.NODE_ENV !== 'production') { // Check if not in production
+  const startServer = async () => {
+    try {
+      await mongoose.connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      console.log('Connected to MongoDB');  // Use console.log for local debugging
+      const PORT = process.env.SERVER_PORT || 3000;
+      app.listen(PORT, () => {
+        logger.info(`Server running on port ${PORT}`);
+        console.log(`Server running on port ${PORT}`); // Also console log for local
+      });
+    } catch (error) {
+      console.error("MongoDB connection error:", error); // Log connection errors
+      logger.error("MongoDB connection error:", error);
+    }
+  };
+
+  startServer();
+}
+
+
